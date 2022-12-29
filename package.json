@@ -1,0 +1,39 @@
+{
+  "name": "sample-node-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.2.1",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "bookshelf": "^1.2.0",
+    "confidence": "^5.0.1",
+    "cors": "^2.8.5",
+    "glob": "^8.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.3.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "pino": "^8.8.0",
+    "uuid": "^9.0.0",
+    "webauthn": "^0.2.0"
+  },
+  "scripts": {
+    "start": "node index.js ",
+    "lint:fix": "npx eslint --fix  --resolve-plugins-relative-to . ."
+  },
+  "precommit": {
+    "run": [
+      "lint:fix"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "pre-commit": "^1.2.2"
+  }
+}

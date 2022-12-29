@@ -1,12 +1,10 @@
 
+const express = require('express')
+const app = express()
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
-const express = require('express');
-const app = express();
-const cors = require('cors');
-const logger = require("./logger");
+app.use(cors())
+app.use(bodyParser())
 
-app.use(cors());
-
-
-module.exports = app;
-
+module.exports = app

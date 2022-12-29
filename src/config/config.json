@@ -1,9 +1,14 @@
 {
     "connection": {
-        "host" : "127.0.0.1",
+        "host" : "localhost",
         "port" : 3306,
-        "user" : { "$env" : "MYSQL_USER" },
-        "password" : { "$env" : "MYSQL_PASSWORD" },
-        "database" : { "$env" : "MYSQL_DATABASE" }
+        "user" : { "$env" : "MYSQL_USER", "$default": "root" },
+        "password" : { "$env" : "MYSQL_PASSWORD" ,"$default": "password" },
+        "database" : { "$env" : "MYSQL_DATABASE","$default": "my_app" }
+      },
+      "jwt":{
+        "secret":{
+          "$env" : "JWT_SECRET", "$default": "secret"
+        }
       }
 }

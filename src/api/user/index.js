@@ -1,16 +1,17 @@
 
-const BaseController = require("../base");
-const controller = require("./controller")
+const BaseController = require('../base')
+const controller = require('./controller')
+const { authMiddleware } = require('../../middlewares')
 class UserApi extends BaseController {
+  constructor () {
+    super('/api/v1/user')
+  }
 
-constructor(){
-super("/api/v1/user");
+  init () {
+    this._router.post('/login', controller.loginUser)
+    this._router.post('/', controller.registerUser)
+    this._router.get('/', authMiddleware, controller.getUserProfile)
+  }
 }
 
-init(){
-    this._router.post("/login",controller.getUser)
-}
-
-}
-
-module.exports= new UserApi();
+module.exports = new UserApi()
