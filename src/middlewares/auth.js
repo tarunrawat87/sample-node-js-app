@@ -1,5 +1,6 @@
 const jsonwebtoken = require('jsonwebtoken')
 const config = require('../config')
+const logger = require('../logger')
 
 const authMiddleware = (req, res, next) => {
   try {
@@ -15,7 +16,7 @@ const authMiddleware = (req, res, next) => {
 
     next()
   } catch (err) {
-    console.log(err)
+    logger.error(`UNAUTH_ACCESS =${err} `)
     res.status(401).send()
   }
 }
